@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title> Sunbeam Inc.  </title>
+</head>
+<body>
+    <nav>
+        <img id="logo" src="images/SUNBEAM.png" alt="logo">
+        <div class="right">
+            <button> <img id="login" src="images/login.png" alt="login"> </button>
+            <a id="log" href="#">Log in</a>
+        </div>
+    </nav>
+    <header>
+        <img src="images/head.jpg" alt="moodpicture">
+        <div class="select">
+            <h1 id="find">Find the car that suits you</h1>
+            <div class="forms" id="form">
+            <form action="/action_page.php">
+                <label for="pickup">I pick it up</label>
+                <input type="date" id="pickup" name="pickup">
+              </form>
+              <form action="/action_page.php">
+                <label for="handin">I hand it in</label>
+                <input type="date" id="handin" name="handin">
+              </form>
+              <form action="/action_page.php">
+                <label for="quantity">Number of persons</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="7">
+              </form>
+              <form action="/action_page.php">
+                <label for="suitcases">Number of suitcases</label>
+                <select name="suitcases" id="suitcases">
+                  <option value="volvo">0-only a bag</option>
+                  <option value="saab">1 suitcase</option>
+                  <option value="opel">2 suitcases</option>
+                  <option value="audi">3 suitcases</option>
+                  <option value="audi">4 suitcases</option>
+                </select>
+                <br><br>
+                <button type="submit" class="search-btn" id="search-btn">search</button>
+              </form>
+            </div>
+            
+        </div>
+    </header>
+        
+    <main>
+        <section class="cars"></section>
+        
+    </main>
+    <script src="./data.js"></script>
+    <script src="./javascript.js"></script>
+</body>
+</html>

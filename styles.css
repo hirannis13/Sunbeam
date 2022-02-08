@@ -1,0 +1,174 @@
+* {
+   
+    margin: 0;
+}
+
+:not(.select *) {
+    background-color:#e6e1d5;
+  }
+
+
+
+/*NAVIGATION*/
+
+#logo {
+width: 30vw;
+margin-left: 2vw;
+}
+
+#login {
+width: 2vw;
+}
+
+#log {
+    text-decoration: none;
+    color: #c4a15f;
+}
+
+nav button {
+    border: none;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+    display: flex;
+    margin-top: 1.5vw;
+    margin-right: 3vw;
+}
+
+.right a {
+    align-content: center;
+}
+
+nav {
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+}
+
+/*NAVIGATION*/
+
+
+/*HEADER*/
+
+header img {
+    width: 100%;
+}
+.select {
+    background-color: rgba(72, 68, 68, 0.619);
+    position: absolute;
+    bottom: 30%;
+    top: 30%;
+    left: 10%;
+    border: solid 0.1vw white;
+}
+
+.select h1 {
+    text-align: center;
+    margin-top:1vw ;
+    margin-bottom: 1.4vw;
+    color: rgb(238, 221, 204);
+}
+
+.search-btn {
+    margin-left: 42%;
+    margin-right: 42%;
+    background-color: transparent;
+    color: white;
+    border: solid 0.09vw white;
+    font-size: 1.1vw;
+    padding: 0.2vw;
+    border-radius: 0.1vw;
+    
+}
+
+#quantity {
+    display: flex;
+    
+}
+#pickup {
+    display: flex;
+}
+#handin {
+    display: flex;
+}
+#suitcases {
+    display: flex;
+}
+
+.forms {
+    display: flex;
+    flex-wrap: wrap;
+    width: 35vw;
+    justify-content: center;
+
+}
+
+.forms > form {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+    color: white;
+    font-size: 1.29vw;
+  }
+
+
+
+/*HEADER*/
+
+
+main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6vw;
+    margin-right: 8vw;
+    margin-top: 5vw;
+}
+
+
+main img {
+    width: 25vw;
+    padding-right: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+}
+
+.name {
+    font-size: 2vw;
+    padding-right: 3vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+}
+
+.infos h2 {
+    font-size: 1.2vw;
+}
+
+.infos {
+    padding-right: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+}
+
+.price h2 {
+    font-size: 1.5vw;
+    padding-bottom: 1vw; 
+}
+
+.price {
+    padding: 2vw;
+    
+}
+
+.book-btn {
+    background-color: rgb(49, 101, 49);
+    color: white;
+    padding: 0.8vw;
+    border: solid white 0.09vw;
+    border-radius: 0.7vw;
+}
+
