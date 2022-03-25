@@ -34,13 +34,14 @@ function validDates(dateStart, dateHandIn) {
     e.preventDefault();
   
     const datesValid = validDates(dateStart.value, dateHandIn.value);
-    if (datesValid) {
+    if (datesValid) {  
+      carsContainer.innerHTML="";
       for (const car of cars) {
         const cost = calcRentalCost(
           calcRentalDays(dateStart.value, dateHandIn.value),
           car.price
         );
-        if (numPersons.value <= 4 || numSuitcases <= 4) {
+        if (numPersons.value < 3 || numSuitcases < 3) {
           if (car.category === "Sedan") {
             carBox = `
                     <div id="car-box">
@@ -52,16 +53,16 @@ function validDates(dateStart, dateHandIn) {
                             <h2 id="car-suitcases">Suitcases: ${car.suitcases}</h2>
                         </section>
                         <section class="price">
-                            <h2 id="car-price">${car.price} kr</h2>
-                            <button class="book-btn" id="car-book-btn">Book Now</button>
+                            <h2 id="car-price">${cost} kr</h2>
+                            <button onclick='buttonclick(${JSON.stringify(car)}, ${JSON.stringify(cost)})' type="button" class="book-btn" id="car-book-btn">Book Now</button>
                         </section>
                     </div>
                 `;
             carsContainer.insertAdjacentHTML("beforeend", carBox);
           }
         }
-        if (numPersons.value > 4 || numSuitcases > 4) {
-          if (car.category === "Sedan" ) {
+        if (numPersons.value >= 3 || numSuitcases >= 3) {
+          if (car.category === "Van" ) {
             carBox = `
                   <div id="car-box">
                           <img id="car-logo" src="${car.image}" />
@@ -72,8 +73,8 @@ function validDates(dateStart, dateHandIn) {
                           <h2 id="car-suitcases">Suitcases: ${car.suitcases}</h2>
                           </section>
                           <section class="price">
-                          <h2 id="car-price">${car.price} kr</h2>
-                          <button class="book-btn" id="car-book-btn">Book Now</button>
+                          <h2 id="car-price">${cost} kr</h2>
+                          <button onclick='buttonclick(${JSON.stringify(car)}, ${JSON.stringify(cost)})' type="button" class="book-btn" id="car-book-btn">Book Now</button>
                           </section>
                       </div>
                   `;
@@ -89,3 +90,15 @@ function validDates(dateStart, dateHandIn) {
     }
   });
   
+
+
+
+
+
+
+
+  function buttonclick (car, totalprice) {
+    sessionStorage.setItem ('car', JSON.stringify(car));
+    sessionStorage.setItem('cost', JSON.stringify(totalprice));
+    window.location.href='accessories.html';
+  }

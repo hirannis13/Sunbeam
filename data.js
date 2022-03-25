@@ -20,8 +20,8 @@ const cars = [
     {
         image: "./images/lancer.png",
         name: "Mitsubishi Lancer 1.8",
-        type: "Sedan",
-        category: "Sedan",
+        type: "Van",
+        category: "Van",
         persons: 5,
         suitcases: 4,
         price: 999,
@@ -29,8 +29,8 @@ const cars = [
     {
         image: "./images/volkswagen.png",
         name: "Ford Focus 1.4",
-        type: "Sedan",
-        category: "Sedan",
+        type: "Van",
+        category: "Van",
         persons: 5,
         suitcases: 3,
         price: 919,

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+</head>
+<body>
+    <h1>Summary page</h1>
+
+    <section class="summary"></section>
+   
+
+   <script>
+       let details = Object.keys(sessionStorage);
+        const summaryContainer = document.querySelector(".summary");
+        let accessPrice = sessionStorage.getItem("total");
+        let carTotal2 = sessionStorage.getItem("cost");
+        let usedCar = JSON.parse(sessionStorage.car);
+        let carTotal = JSON.parse(sessionStorage.cost);
+        let accessTotal = JSON.parse(sessionStorage.total);
+        let access = JSON.parse(sessionStorage.goods);
+        
+        let summaryBox = `
+                  <div class="firstcarSummary" id="car-box">
+                          <img class="car-logo" id="car-logo" src=${usedCar.image} />
+                          <p class="name" id="car-name">${usedCar.name}</p>
+                          <div class="infos">
+                          <p id="car-category">Type: ${usedCar.type}</p>
+                          <p id="car-persons">Persons: ${usedCar.persons}</p>
+                          <p id="car-suitcases">Suitcases: ${usedCar.suitcases}</p>
+                          </div>
+                          <div class="price">
+                          <p id="car-price">${carTotal.toLocaleString("da-DK", {style: "currency", currency: "DKK"})}</p>
+                          
+                          </div>
+                      </div>
+                  `;
+        summaryContainer.insertAdjacentHTML("beforeend", summaryBox);
+        let accessoriesBox = `
+        <div class="firstcarSummary" id="car-box">   
+            <h1>Selected accessories</h1>                       
+                          <p class="car-name" id="car-name">${access}</p>
+                          <p id="car-price">${accessTotal.toLocaleString("da-DK", {style: "currency", currency: "DKK"})}</p>
+                          
+                          </div>
+                      </div>
+                      `;
+        summaryContainer.insertAdjacentHTML("beforeend", accessoriesBox);
+        let totalPriceBox = `
+        <div class="firstcarSummary" id="car-box">                          
+                          
+                          <p id="car-price">Total price: ${totalPriceCalc(carTotal2, accessPrice).toLocaleString("da-DK", {style: "currency", currency: "DKK"})}</p>
+                          
+                          </div>
+                      </div>
+        `;
+        summaryContainer.insertAdjacentHTML("beforeend", totalPriceBox);
+        function totalPriceCalc (carTotal2, accessPrice){
+            total = parseInt(carTotal2) + parseInt(accessPrice);
+            return total;
+        }
+   </script>
+</body>
+</html>

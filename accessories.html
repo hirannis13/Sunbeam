@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title> Sunbeam Inc.  </title>
+</head>
+<body>
+    <nav>
+        <div>
+            <!-- Here will be the information -->
+        </div>
+    </nav>
+        
+    <main>
+       
+          <form class="accessories" id="forms">
+            <fieldset class="hello">
+                <legend id="access">Choose your accessories</legend>
+                <br>
+                <input type="checkbox" data-item="Childseat" class="slist" value="100" onchange="calculateTotal(this, this.value)">Childseat <h4>100 DKK</h4><br>
+                <input type="checkbox" data-item="Navigation" class="slist" value="200" onchange="calculateTotal(this, this.value)">Navigation <h4>200 DKK</h4><br>
+                <input type="checkbox" data-item="Multifunctional" class="slist" value="55" onchange="calculateTotal(this, this.value)">Multifunctional storage <h4>55 DKK</h4><br>
+                <input type="checkbox" data-item="Trashcan" class="slist" value="43" onchange="calculateTotal(this, this.value)">Trashcan <h4>43 DKK</h4><br>
+                <input type="checkbox" data-item="Cupholder" class="slist" value="36" onchange="calculateTotal(this, this.value)">Cupholder <h4>36 DKK</h4>
+                <div id="totaloutput"></div>
+                <br>
+                <button id="save" type="submit">Go to checkout</button>
+                <br>
+            </fieldset>
+        </form>
+        
+    </main>
+
+    <script>
+        let total = 0.00; // Global variable, total starts at zero
+        showTotal(); // Calls function showTotal to show current total
+
+        // Event handler - check if checkbox is selected or not and 
+        // adjust the total value accordingly
+        function calculateTotal(checkbox, itemprice) {
+            if (checkbox.checked === true) { // If the checkbox is seleted then ...
+                total = Math.abs(total + parseFloat(itemprice));
+            } else { // if it is not selected then ...
+                total = Math.abs(total - parseFloat(itemprice));
+            }
+            showTotal();
+        }
+
+        // Shows total value on screen
+        function showTotal() {
+            const output = document.getElementById("totaloutput");
+            output.innerText = `Total ${total.toLocaleString("da-DK", {style: "currency", currency: "DKK"})}`;
+        }
+        console.warn (sessionStorage.getItem("car"));
+        const form = document.getElementById("forms");
+        forms.reset(); // Resets form every time page loads
+        
+        const checkboxes = document.getElementsByClassName("slist"); //Build an object list with checkboxes
+        forms.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let shoppinglist = []; // Define shopping list
+            for (const checkbox of checkboxes) {
+                if (checkbox.checked === true) { // If the item is selected ...
+                    shoppinglist.push(checkbox.dataset.item + "(dkr. " + checkbox.value + ")"); // add it to the shopping list.
+                }
+            }
+
+            // Stores information in sessionstorage
+            sessionStorage.setItem("goods", JSON.stringify(shoppinglist));
+            sessionStorage.setItem("total", total);
+
+            location.href="checkout.html"; // Redirect user to page2.html
+        })
+    </script>
+
+    <script src="./data.js"></script>
+    <script src="./javascript.js"></script>
+</body>
+</html>

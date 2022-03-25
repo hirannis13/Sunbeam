@@ -126,6 +126,23 @@ main div {
     margin-top: 5vw;
 }
 
+.firstcarSummary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6vw;
+    margin-right: 8vw;
+    margin-top: 5vw;
+}
+
+.car-logo {
+    width: 25vw;
+    padding-right: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+}
+
 
 main img {
     width: 25vw;
@@ -170,5 +187,50 @@ main img {
     padding: 0.8vw;
     border: solid white 0.09vw;
     border-radius: 0.7vw;
+}
+
+
+
+/*ACCESSORIES PAGE*/
+
+.accessories {
+    font-size: 1.5vw;
+    width: 50%;
+    margin-left : 28%   
+}
+
+.hello {
+    justify-content: center;
+    text-align: center;
+}
+
+.accessories h4 {
+    font-size: 1.2vw;
+    color: #363026;
+       
+}
+
+.accessories label {
+    color: #463e30;
+}
+
+#access {
+    font-size: 2.5vw;
+    text-align: center;
+    color: #3a3325;
+}
+
+#save {
+    background-color: rgb(49, 48, 43);
+    color: white;
+    padding: 0.8vw;
+    border: solid white 0.09vw;
+    border-radius: 0.7vw;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.accessories * {
+    align-items: center;
 }
 
